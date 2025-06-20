@@ -1,8 +1,6 @@
 package org.example;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Date {
     public int year;
@@ -17,18 +15,14 @@ public class Date {
         this.dayOfMonth = dayOfMonth;
     }
 
-    // days > 0
+    // days will always be greater than > 0. Also, no other validations are done on input dates
     public Date addDaysToDate(int days) {
-        // 2025, 10, 20, days = 20, 80
-        // 11, 30, 31, 31 = 103
-        // year = 2026,
-        // [31, 28, 30,
         int currentDayOfMonth = this.dayOfMonth;
         List<Integer> monthDays = List.of(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 
         if (days + currentDayOfMonth <= monthDays.get(this.month - 1)) {
             this.dayOfMonth = days + currentDayOfMonth;
-        } else if (days + currentDayOfMonth > monthDays.get(this.month - 1)) {
+        } else {
             int currMonth = this.month;
             int totalDaysElapsed = monthDays.get(currMonth - 1) - currentDayOfMonth; // remaining days in current month
             int i = currMonth;

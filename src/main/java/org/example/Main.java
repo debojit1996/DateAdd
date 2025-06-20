@@ -10,5 +10,10 @@ public class Main {
         int daysToAdd = 366;
         System.out.println("Input Date is: " + inputDate + " and days to add is: " + daysToAdd);
         System.out.println("Calculated Date is: " + inputDate.addDaysToDate(daysToAdd));
+
+        inputDate = new Date(2025, 10, 10);
+        daysToAdd = 20;
+        System.out.println("Second input Date is: " + inputDate + " and days to add is: " + daysToAdd);
+        System.out.println("Second calculated Date is: " + inputDate.addDaysToDate(daysToAdd));
     }
 }
